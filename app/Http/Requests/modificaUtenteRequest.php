@@ -11,7 +11,7 @@ class modificaUtenteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class modificaUtenteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nome' => 'required',
+            'cognome' => 'required',
+            'email' => 'required|email|unique:users',
+            'telefono' => 'number'
         ];
     }
 }
