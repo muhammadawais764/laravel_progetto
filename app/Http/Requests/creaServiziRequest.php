@@ -11,7 +11,7 @@ class creaServiziRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class creaServiziRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nome_servizio' => 'required',
+            'tipo' => 'string',
+            'pezzo' => 'number',
+            'attivo' => 'boolean',
         ];
     }
 }
