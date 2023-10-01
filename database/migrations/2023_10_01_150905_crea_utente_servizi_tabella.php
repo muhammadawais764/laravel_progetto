@@ -14,9 +14,6 @@ return new class extends Migration
         Schema::create('utente_servizi', function (Blueprint $table) {
             $table->integer('utente_id');
             $table->integer('servizio_id');
-            $table->string('tipo');
-            $table->integer('prezzo');
-            $table->boolean('ativo')->default('true');
             $table->timestamps();
         });
     }
