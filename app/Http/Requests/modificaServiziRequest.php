@@ -28,4 +28,14 @@ class modificaServiziRequest extends FormRequest
             'attivo' => 'boolean',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'nome_Servizio.requried' => 'nome e obbligatorio',
+            'tipo.string' => 'tipo deve essere una stinga',
+            'prezzo.number' => 'prezzo deve essere un number',
+            'attivo.boolean' => 'tipo deve essere una booleano'
+        ];
+    }
 }
