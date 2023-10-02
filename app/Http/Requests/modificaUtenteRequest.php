@@ -28,4 +28,16 @@ class modificaUtenteRequest extends FormRequest
             'telefono' => 'number'
         ];
     }
+    public function messages()
+    {
+        return [
+            'nome.requried' => 'nome e obbligatorio',
+            'nome.string' => 'nome eve essere una stinga',
+            'cognome.requried' => 'cognome e obbligatorio',
+            'conome.string' => 'cognome eve essere una stinga',
+            'email.requried' => 'email e obbligatorio',
+            'email.email' => 'email deve essere un tipo email',
+            'telefono.number' => 'telefono deve essere un number',
+        ];
+    }
 }
