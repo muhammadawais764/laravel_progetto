@@ -22,10 +22,23 @@ class creaUtenteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required',
-            'cognome' => 'required',
+            'nome' => 'required||string',
+            'cognome' => 'required|string',
             'email' => 'required|email|unique:users',
             'telefono' => 'number'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nome.requried' => 'nome e obbligatorio',
+            'nome.string' => 'nome eve essere una stinga',
+            'cognome.requried' => 'cognome e obbligatorio',
+            'conome.string' => 'cognome eve essere una stinga',
+            'email.requried' => 'email e obbligatorio',
+            'email.email' => 'email deve essere un tipo email',
+            'telefono.number' => 'telefono deve essere un number',
         ];
     }
 }
