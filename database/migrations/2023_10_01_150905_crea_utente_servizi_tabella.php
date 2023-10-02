@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('utente_servizi', function (Blueprint $table) {
             $table->integer('utente_id');
             $table->integer('servizio_id');
+            $table->integer('prezzo');
             $table->timestamps();
         });
     }
