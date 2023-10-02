@@ -21,8 +21,10 @@ class UserModel extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //servizio può essere parte di piu di un utente
     public function servizi()
     {
-        userModel::hasmany('');
+        return $this->belongsToMany(UserModel::class,'utente_servizi','utente_id','servizio_id')->withPivot('attivo');
     }
 }
